@@ -4,7 +4,7 @@ import csv
 import os
 from collections import OrderedDict
 
-import exceptions as ex
+import custom_exceptions as ex
 
 
 class CsvParser(object):
@@ -23,7 +23,7 @@ class CsvParser(object):
         if os.path.isfile(self.file_name):
             return True
         else:
-            raise ex.FileNotFound("File '{}' not found!".format(self.file_name))
+            raise ex.FileCannotBeFound("File '{}' not found!".format(self.file_name))
 
     def parse_csv_file(self):
         """
